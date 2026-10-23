@@ -1,0 +1,54 @@
+#include <windows.h>
+#include "resource.h"
+#pragma code_page(65001)
+
+IDI_APP ICON "app.ico"
+1 RT_MANIFEST "app.manifest"
+
+IDD_SETTINGS DIALOGEX 0, 0, 334, 374
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_CLIPCHILDREN
+CAPTION "RyCenter"
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT "Right in the middle.", IDC_TITLE, 19, 58, 296, 18, SS_CENTER
+    LTEXT "One shortcut. A calmer desktop.", IDC_SUBTITLE, 19, 78, 296, 12, SS_CENTER
+    LTEXT "Center window", IDC_SHORTCUT_LABEL, 29, 177, 105, 16
+    LTEXT "Click to record.", IDC_HINT, 29, 198, 166, 12
+    PUSHBUTTON "", IDC_HOTKEY, 143, 174, 162, 21
+    PUSHBUTTON "Reset shortcut", IDC_RESET, 236, 197, 69, 14
+    CONTROL "Center new windows", IDC_AUTO, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 20, 228, 293, 36
+    CONTROL "Start with Windows", IDC_STARTUP, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 20, 266, 293, 35
+    LTEXT "", IDC_STATUS, 20, 308, 293, 22
+    LTEXT "RyCenter 0.1.0\nFree. Private. Entirely offline.", IDC_FOOTER, 19, 344, 153, 22
+    PUSHBUTTON "Cancel", IDCANCEL, 205, 347, 53, 18
+    DEFPUSHBUTTON "Save", IDOK, 264, 347, 51, 18
+    PUSHBUTTON "Close", IDC_CLOSE, 303, 2, 21, 15
+END
+
+1 VERSIONINFO
+FILEVERSION 0,1,0,0
+PRODUCTVERSION 0,1,0,0
+FILEFLAGSMASK 0x3fL
+FILEFLAGS 0
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Ryan Polasky"
+            VALUE "FileDescription", "RyCenter — a little more centered"
+            VALUE "FileVersion", "0.1.0"
+            VALUE "InternalName", "RyCenter"
+            VALUE "LegalCopyright", "Copyright © 2026 Ryan Polasky. MIT License."
+            VALUE "OriginalFilename", "RyCenter.exe"
+            VALUE "ProductName", "RyCenter"
+            VALUE "ProductVersion", "0.1.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
