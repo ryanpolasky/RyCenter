@@ -73,4 +73,5 @@ jobs:
           exe="RyCenter_${version}_x64_portable.exe"
           mv package/RyCenter.exe "$exe"
           git fetch --force origin "refs/tags/$GITHUB_REF_NAME:refs/tags/$GITHUB_REF_NAME"
-          gh release create "$GITHUB_REF_NAME" "$exe" --title "RyCenter $version for Windows" --notes-from-tag --latest
+          git tag -l --format='%(contents:body)' "$GITHUB_REF_NAME" > notes.md
+          gh release create "$GITHUB_REF_NAME" "$exe" --title "RyCenter $version for Windows" --notes-file notes.md --latest
